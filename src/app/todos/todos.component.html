@@ -1,13 +1,25 @@
-<main class="main">
-    <div>
-        <h1>Lista to-do</h1>
-        <section>
-            <h2>Dodaj zadanie</h2>
-            <div></div>
+<div class="to-do-container">
+    <main class="main">
+        <h1 class="main__header">Lista to-do</h1>
+        <section class="section">
+            <h2 class="section__header">Dodaj zadanie</h2>
+            <div class="section__add-task">
+                <input type="text" class="section__add-task-form">
+                <button class="section__add-task-button">Dodaj zadanie</button>
+            </div>
         </section>
-        <section>
-            <h2>Lista zadań</h2>
-            <div></div>
+        <section class="section">
+            <h2 class="section__header">Lista zadań</h2>
+            <ul class="list">
+                <li class="list-item" *ngFor="let task of taskArray">
+                    <div>
+                        <button class="list-button list-button--done">Ukończ</button>
+                        <span>{{task.name}}</span>
+                    </div>
+                    <button class="list-button list-button--remove">Usuń</button>
+                </li>
+
+            </ul>
         </section>
-    </div>
-</main>
+    </main>
+</div>

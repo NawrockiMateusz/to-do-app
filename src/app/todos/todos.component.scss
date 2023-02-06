@@ -1,10 +1,76 @@
-.main {
+.to-do-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-div {
-  max-width: 1000px;
+.main {
+  max-width: 800px;
   width: 100%;
+}
+
+.section {
+  background-color: white;
+  margin-bottom: 10px;
+  &__header {
+    padding: 16px;
+    font-weight: 400;
+    margin: 0;
+    border-bottom: 4px solid #eee;
+  }
+  &__add-task {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    column-gap: 20px;
+
+    &-form {
+      display: inline-block;
+      padding: 8px;
+    }
+    &-button {
+      background-color: rgb(82, 157, 255);
+      color: white;
+      border: none;
+      transition: 0.3s;
+      &:hover {
+        background-color: rgb(20, 120, 251);
+        cursor: pointer;
+      }
+    }
+  }
+}
+.list {
+  padding: 10px;
+  margin: 0;
+  &-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: none;
+    transition: 0.4s;
+    margin: 10px;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
+    &--done {
+      color: rgb(82, 157, 255);
+      &:hover {
+        background-color: rgb(20, 120, 251);
+      }
+    }
+    &--remove {
+      color: red;
+      &:hover {
+        background-color: rgb(255, 115, 115);
+      }
+    }
+  }
 }
