@@ -4,14 +4,14 @@
         <section class="section">
             <h2 class="section__header">Dodaj zadanie</h2>
             <div class="section__add-task">
-                <input type="text" class="section__add-task-form">
-                <button class="section__add-task-button">Dodaj zadanie</button>
+                <input type="text" class="section__add-task-form" [(ngModel)]="taskName">
+                <button class="section__add-task-button" (click)="addNewTask(taskName)">Dodaj zadanie</button>
             </div>
         </section>
         <section class="section">
             <h2 class="section__header">Lista zadań</h2>
             <ul class="list">
-                <li class="list-item" *ngFor="let task of taskArray">
+                <li class="list-item" *ngFor="let task of taskArray; let i = index ">
                     <div>
                         <button class="list-button list-button--done">Ukończ</button>
                         <span>{{task.name}}</span>
